@@ -1,0 +1,11 @@
+n = int(input())
+lists = list(map(int,input().split()))
+amount = 0
+for lis in lists:
+    amount+=(5*round(lis/5)-lis)
+if amount <0:
+    print("loss",abs(amount))
+elif(amount==0):
+    print("no loss no profit")
+else:
+    print("profit",amount)

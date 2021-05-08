@@ -1,0 +1,20 @@
+D=int(input())
+dragon=list(map(int,input().split()))  # 6 5 5 6 7
+B=int(input())
+bomb=list(map(int,input().split()))  #3 1 1 1 
+for x in bomb:
+    isgameover = False
+    for index in range(D):
+        dragon[index]-=x  
+        if dragon[index] < 0:
+            isgameover = True
+            break
+    if isgameover:
+        print("Game Over")
+        break
+    else:
+        print(*dragon)
+else:
+    print("Game Over")
+
+    

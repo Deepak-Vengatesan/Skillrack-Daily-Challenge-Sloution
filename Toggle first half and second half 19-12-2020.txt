@@ -1,0 +1,8 @@
+S = input().strip()
+for ch in S:
+    if ch.lower() in 'abcdefghijklm':
+        print(chr(ord(ch)+13),end="")
+    elif ch == ' ':
+        print(ch,end="")
+    else:
+        print(chr(ord(ch)-13),end="")

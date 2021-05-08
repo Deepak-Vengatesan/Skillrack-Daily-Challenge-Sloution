@@ -1,0 +1,30 @@
+def traverse(from_x,from_y,to_x,to_y):
+    row,col = from_x,from_y
+    while True:
+        matrix[row][col] = '*'
+        if row == to_x and col == to_y:
+            break;
+        if from_x < to_x:
+            row+=1
+        if from_x > to_x:
+            row-=1
+        if from_y < to_y:
+            col+=1
+        if from_y > to_y:
+            col-=1
+            
+        
+
+R,C = map(int,input().split())
+matrix =[input().split() for row in range(R)]
+x1,y1 = map(int ,input().split())
+x2,y2 = map(int ,input().split())
+x3,y3 = map(int ,input().split())
+x1,y1,x2,y2,x3,y3 = x1-1,y1-1,x2-1,y2-1,x3-1,y3-1
+traverse(x1,y1,x2,y2)
+traverse(x2,y2,x3,y3)
+traverse(x1,y1,x3,y3)
+
+for row in matrix:
+    print(*row)
+

@@ -1,0 +1,15 @@
+N = int(input())
+userlist,followerslist = [],[]
+for ctr in range(N):
+    strval = input().strip()
+    if strval[2] == ">":
+        followerslist.append(strval[-1])
+    else:
+        followerslist.append(strval[0])
+    userlist.append(strval[0])
+    userlist.append(strval[-1])
+userlist = sorted(set(userlist))
+for ptr in userlist:
+    print(ptr,end=" ")
+    print(followerslist.count(ptr))
+    

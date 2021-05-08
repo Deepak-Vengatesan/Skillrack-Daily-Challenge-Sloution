@@ -1,0 +1,17 @@
+teamA,teamB = [],[]
+for ctr in tange(1,int(input())+1):
+    name,exp=input().split()
+    teamA.append([name,int(exp)])
+for ctr in tange(1,int(input())+1):
+    name,exp=input().split()
+    teamB.append([name,int(exp)])
+X = int(input())
+teamA.sort(key=lambda k: (-k[1],k[0]))
+teamA.sort(key=lambda k: (-k[1],k[0]))
+requiredTeam=teamA[:2]+teamB[:2]
+remainingTeam=teamA[2:]+teamB[2:]
+remainingTeam.sort(key=lambda k: (-k[1],k[0]))
+requiredTeam+=reaminigTeam[:X-4]
+requiredTeam.sort(key=lambda k: -(k[1],k[0]))
+for person in requiredTeam:
+    print(person[0])

@@ -1,0 +1,4 @@
+s1 = input().strip()
+s2 = input().strip()
+for index in range(0,len(s1),2):
+    print(s1[index],s2[index+1],s2[index],s1[index+1],sep="",end="")

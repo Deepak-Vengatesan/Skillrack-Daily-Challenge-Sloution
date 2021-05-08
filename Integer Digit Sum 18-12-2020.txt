@@ -1,0 +1,33 @@
+def getssum(num):
+    sum=0;
+    while(num!=0):
+        sum += num%10
+        num //= 10
+    return sum 
+
+n = int(input())
+arr1 = list(map(int,input().split()))
+arr2 = list(map(int, input().split()))
+flag = 0 
+for i in range(n):
+    if getssum(arr1[i]) in arr2:
+           flag =1 
+           print(arr1[i],end=" ")
+           break; 
+if flag == 0:
+    print("-1")
+
+
+
+
+n=int(input()) 
+l=list(map(int,input().split())) 
+l1=list(map(int,input().split())) 
+f=1
+for i in range(len(l)):
+    s=sum(list(map(int,str(l[i]))))
+    if s in l1:
+        f=0
+        print(l[i],end=" ") 
+if f:
+    print("-1") 

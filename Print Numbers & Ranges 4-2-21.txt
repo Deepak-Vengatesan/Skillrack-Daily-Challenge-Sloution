@@ -1,0 +1,19 @@
+N=int(input())
+numList=sorted(list(map(int,input().split())))
+startRange,endRange=numList[0],False
+ranges=[]
+for index in range(1,N):
+    if numList[index]-numList[index-1]==1:
+        endRange=numList[index]
+    else:
+        if endRange==False:
+            ranges.append(str(startRange))
+        else:
+            ranges.append(str(startRange)+'-'+str(endRange))
+        startRange=numList[index]
+        endRange=False
+if endRange==False:
+    ranges.append(str(startRange))
+else:
+    ranges.append(str(startRange)+'-'+str(endRange))
+print(','.join(ranges))

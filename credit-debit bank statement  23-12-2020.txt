@@ -1,0 +1,10 @@
+totalamount,N=map(int,input().split())
+print("Opening Balance:%d"%totalamount)
+for ctr in range(1,N+1):
+    receivedamount,balanceamount=map(int,input().split())
+    if balanceamount > totalamount:
+        totalamount = balanceamount
+        print("Credit:%d Balance:%d"%(receivedamount,balanceamount))
+    else:
+        totalamount -= receivedamount 
+        print("Debit:%d Balance:%d"%(receivedamount,balanceamount))

@@ -1,0 +1,9 @@
+n,x=map(int,input().split())       
+nums=list(range(1,x+1))            
+currId = 0;
+while len(nums) < n:
+    for index in range(len(nums)):
+        if index!=currId:
+            nums.append(nums[index]+nums[currId])
+    currId+=1 
+print(*nums[:n])
