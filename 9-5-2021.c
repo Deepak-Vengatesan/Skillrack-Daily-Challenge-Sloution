@@ -1,41 +1,29 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct BoundedArray
+char* getCommaSeparatedValues(int SIZE, int arr[])
 {
-    int SIZE;
-    int *arr;
-} boundedArray;
-
-boundedArray* getThreeOrFourDigits(int SIZE, int arr[])
-{
-    boundedArray *bArr = malloc(sizeof(boundedArray));
-    bArr->arr= malloc(sizeof(int)*SIZE);
-    bArr->SIZE = 0;
-    for(int index=0; index<SIZE; index++){
-        if((getDigitCount(arr[index])) == 3 || (getDigitCount(arr[index])) == 4){
-            bArr->arr[bArr->SIZE++] = arr[index];
+    char* str = malloc(sizeof(char)*100);
+    strcat(str,"");
+    for(int i=0; i<SIZE; i++){
+        char num[10];
+        sprintf(num,"%d",arr[i]);
+        strcat(str,num);       
+        if(i!=SIZE-1){
+            strcat(str,",");
         }
     }
-    return bArr;
+    return str;
 }
-
 
 int main(){
     int N;
-    scanf("%d", &N);
+    scanf("%d",&N);
     int arr[N];
     for(int index=0; index<N; index++){
-        scanf("%d", &arr[index]);
+        scanf("%d",&arr[index]);
     }
-    boundedArray *bArr = getThreeOrFourDigits(N, arr);
-    printf("Old Array: ")
-    for(int index=0; index<N; index++){
-        printf("%d", arr[index]);
-    }
-    printf("\nNew Array: ");
-    for(int index = 0; index < bArr->size; index++){
-        printf("%d", bArr->arr[index]);
-    }
+    char *ptr = getCommaSeparatedValues(N, arr);
+    printf("CSV: %s", ptr);
     return 0;
 }
