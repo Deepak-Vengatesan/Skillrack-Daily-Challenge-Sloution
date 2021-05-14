@@ -1,17 +1,27 @@
-S = input().split("-")
-temp = ['' for row in range(len(S))]
-ch =''
-for i in S:
-    point,ch = '', ''
-    for j in i:
-        if j.isdigit():
-            point += str(j)
-        else:
-            ch  += j  
-    temp[int(point)-1] = ch 
-print(''.join(temp))
+# S = input().split("-")
+# temp = ['' for row in range(len(S))]
+# ch =''
+# for i in S:
+#     point,ch = '', ''
+#     for j in i:
+#         if j.isdigit():
+#             point += str(j)
+#         else:
+#             ch  += j  
+#     temp[int(point)-1] = ch 
+# print(''.join(temp))
 
 
+
+s = input().strip().split("-")
+d = dict()
+for i in s:
+    try:
+        d[int(i[:-1])] = i[-1]
+    except:
+        d[int(i[1:])] = i[0]
+for i in sorted(d):
+    print(d[i],end="")
 
 '''
 
