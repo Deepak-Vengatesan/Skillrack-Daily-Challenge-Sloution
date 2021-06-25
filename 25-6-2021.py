@@ -7,3 +7,7 @@ for ctr in range(1,N+1):
     if person[name] > 1:
         print(person[name],end=" ")
     print()
+
+
+
+
