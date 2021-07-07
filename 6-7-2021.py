@@ -13,3 +13,14 @@ for ind in range(R):
 
 for i in vpattern:
     print(''.join(i))
+
+
+
+'''
+s***l***k
+*k*l*r*c*
+**i***a**
+*k*l*r*c*
+s***l***k
+
+'''
