@@ -11,7 +11,6 @@ while True:
         startTime+=x+y 
     else:
         break 
-print(slots)
 if slots:
     for time in slots:
         print(f"{str(time[0]//60).zfill(2)}:{str(time[0]%60).zfill(2)}",end = ' - ')
