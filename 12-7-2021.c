@@ -27,9 +27,9 @@ boundedArray* customSplit(char *str, char delimiter)
 
 int main(){
     char str[1001], delimiter;
-    scanf("%s\n%c",str,&delimiter);
+    scanf("%s\n%c",str, &delimiter);
     boundedArray *bArr = customSplit(str,delimiter);
-    printf("words:\n");
+    printf("Words:\n");
     for(int index = 0; index < bArr->SIZE; index++){
         printf("%s\n", bArr->words[index]);
     }
